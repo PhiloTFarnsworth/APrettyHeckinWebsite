@@ -11,7 +11,156 @@
     <title>A Pretty Heckin' Website</title>
     
 </head>
+
 <body>
-    <h1>A Pretty Heckin' Website</h1>
+    <header>
+        <h1>A Pretty Heckin' Website</h1>
+        <p>For developers who don't spit and curse.</p>
+    </header>
+    <main>
+        <h2>Why Another Heckin' Website?</h2>
+        <div>
+            <p>
+                In deference to the great luminaries of the past, we should expect more from websites that purport 
+                to be the best {expletive} website.  A Pretty Heckin' website meekly submits that beyond making your 
+                site small, maybe you could think about accessibility and if it's not too much a bother maybe don't just use 
+                a more than like, 5 bullet points in a row.
+            </p>
+        </div>
+        <div>
+        <h3>Section Headings Aren't For Emphasis: A Modest Proposal</h3>
+        <p>
+            I don't want to disagree with such strongly worded convictions of our sainted forefathers, but when
+            writing a humble static site using headers in a way that clues the reader in on what's about to be 
+            discussed.  Not only will using relevant headers help your readers follow the content of your page, 
+            but it might stop you from I don't know, using 14 bulletpoints in a row on some tangetically related 
+            topics.  That of course, leads me to...
+        </p>
+        <aside>
+            <h4>Fun Tip</h4>
+            <p>
+                An aside can be better place to deliver rebukes to your reader's intelligence.  The goal of your 
+                website is to prove how intelligent you are, not how slovenly and homely the reader reading this is.
+            </p>
+        </aside>
+        </div>
+        <div>
+        <h3>There's More to Life than Lists</h3>
+        <p>
+            Variety is the spice of life, and in that vein, you should consider breaking up information when it makes
+            sense.
+        </p>
+        <div>
+        <h4>Tables</h4>
+        <table>
+            <caption>Tables Are Great for Comparisons</caption>
+            <thead>
+                <tr><th>Websites</th><th>Requests Total Size (Chrome)</th><th>Media Compatiable</th><th>Tables?</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>Google.com</td><td>~800 kB</td><td>N/A</td><td>N/A</td></tr>
+                <tr><td>M*****F******Website.com</td><td>~22 kB</td><td>NO</td><td>NO</td></tr>
+                <tr><td>BetterM*****F*******Website.com</td><td>~22 kB</td><td>NO</td><td>NO</td></tr>
+                <tr><td>TheBestM*****F******.Website</td><td>~110 kB</td><td>YES</td><td>NO</td></tr>
+                <tr><td>A Pretty Heckin' Website</td><td>TBD</td><td>YES</td><td>YES</td></tr>
+            </tbody>
+        </table>
+        <p>With that said... Lists are actually important</p>
+        </div>
+        <div>
+        <h4>Lists</h4>
+        <ul>
+            <li>But you want to keep list items short</li>
+            <li>They should also be to the point</li>
+            <li>You shouldn't really write full sentences in them</li>
+            <li>But if you do</li>
+            <li>You should probably make sure that you're handling longer sentences when building a responsive modern website</li>
+        </ul>
+        <p>Even then, you can get wild and use some more exotic representations built right into the HTML spec</p>
+        </div>
+            <div>
+                <h4>Other Informational Widgets</h4>
+                <p>Since we're past the age of IE, we can also use some more esoteric tags, like Details and Meter</p>
+                <details>
+                    <summary>Look at this!</summary>
+                    <p>You can use details when you don't think it's necessary for the reader to get all the details.</p>
+                </details>
+                <br></br>
+                TODO: UPDATE THIS WITH CURRENT SCROLL POSITION
+                <label for="pageProgress">Page Progress:</label>
+                <meter
+                    id="pageProgress" min="0" max="100" value="0" optimum="0">
+                0
+                </meter>
+                <aside>I have no idea why meter is in the HTML spec.</aside>
+            </div>
+        </div>
+        <div>
+            <h3>Forms are Fundamental</h3>
+            <p>
+                It's certainly weird that we're writing about websites that don't offer anything to do.  Since you already have
+                a livejournal, we should probably model what you do when you want to have a website that actually does something.
+            </p>
+            <form>
+                <fieldset>
+                    <label for="formText">Text Input</label>
+                    <input type="text" id="formText" name="text" placeholder="Type Something, Will ya?">
+                    <label for="formNumber">Number Input</label>
+                    <input type="number" id="formNumber" name="number" min="0" max="100">
+                    <label for="formRange">Range Input</label>
+                    <input type="range" id="formRange" name="range" min="0" max="100">
+                    <div>
+                    <label for="formDate">Date Time Input</label>
+                        <input type="date" id="formDate" name="date">
+                        <input type="time" id="formTime" name="time">
+                    </div>
+                    <label for="formBox">Checkbox</label>
+                    <input type="checkbox" id="formBox" name="box" value="true">
+                    <label for="formSelect">Select</label>
+                    <select id="formSelect" name="select">
+                        <option value=""></option>
+                        <option value="1xer">1Xer</option>
+                        <option value="10xer">10Xer</option>
+                        <option value="overflow xer">Overflow Xer</option>
+                    </select>
+                </fieldset>
+            </form>
+            TODO: FORM SHOULD CREATE AN ALERT WITH VALUES CHOSEN, RANGE AND NUMBER SHOULD AFFECT THE SAME VALUE AND MOVE A METER.
+            <p>
+                Now we're talking, there's even a button on the site now.  Instead of venting to the world, you've now shown you 
+                can take input and throw it right back in the user's face, where it belongs.
+            </p>
+        </div>
+        <div>
+            <h3>Images, colors and all those pretty things</h3>
+            <p>
+                Finally, you need to accommodate your users who go by pictures, this is not always an easy task.
+            </p>
+            <img src="Heckin.jpg" alt="Some Picture Here"></img>
+            <p>
+                And to be honest, you should probably prepare for the only lower form of life, people who watch tutorials on youtube.
+            </p>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/RzX-fx_GhrM" title="YouTube video player - Harrison Ford Already Works Around the Clock" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            TODO: VARIABLE SIZED IFRAME
+        </div>
+        <div>
+            <h2>Pretty Heckin Website is not a satire</h2>
+            <p>
+                Every website should look like this, and any which do not conform should be removed from the internet with extreme prejudice.
+            </p>
+        </div>
+        <div>
+            <h2>Epilogue</h2>
+            <p>
+                Pretty obviously inspired by the brilliant pages <a href="https://thebestmotherfucking.website/">The Best M*****F****** Website</a>, 
+                <a href="http://bettermotherfuckingwebsite.com/">Better M*****F****** Website</a> and <a href="http://motherfuckingwebsite.com/">M*****F****** Website</a>.
+                Beyond being entertaining reads, they offer some sage advice about what's important in webpage design.  Even if they have never heard of 
+                a table.
+            </p>
+        </div>
+    </main>
+    <footer>
+        Copyright 2022 Michael Gardner - <a href=" www.linkedin.com/in/michael-gardner-az">Hire Me.</a> Please.
+    </footer>
 </body>
 </html>
