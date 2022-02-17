@@ -1,0 +1,14 @@
+@font-face {
+  font-family: "lemonmilk";
+  src: url("fonts/LEMONMILK-Regular.otf") format("opentype");
+}
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+  color: brown;
+}
+
+p {
+  text-align: start;
+}
+
+/*# sourceMappingURL=style.css.map */
