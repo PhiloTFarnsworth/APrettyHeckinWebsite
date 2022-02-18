@@ -1,49 +1,228 @@
+@media all and (width > 200px) {
+    body {
+      margin: 0% 2%;
+      background: #0000ff;
+    }
+  }
+
 @font-face {
-    font-family: 'lemonmilk';
-    src: url("fonts/LEMONMILK-Regular.otf") format("opentype");
+    font-family: 'LEMONMILK';
+    src: url("fonts/LEMONMILK-light.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
 }
 
-body {
+@font-face {
+    font-family: 'LEMONMILK';
+    src: url("fonts/LEMONMILK-lightitalic.woff2") format("woff2");
+    font-weight: normal;
+    font-style: italic;
+}
 
+@font-face {
+    font-family: 'LEMONMILK';
+    src: url("fonts/LEMONMILK-Regular.woff2");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'LEMONMILK';
+    src: url("fonts/LEMONMILK-RegularItalic.woff2");
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+  
+
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0% 10%;
+    padding: 0rem 4rem;
+    background: #efefef;
+    color: #111;
+    min-width: fit-content;
+    min-width: -moz-fit-content;
+    min-width: -webkit-fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 h1,h2,h3,h4,h5,h6 {
+    font-family:"LEMONMILK", sans-serif;
     text-align: center;
     color: brown;
+    font-weight: bold;
+    margin-bottom: .25rem;
+    border-top: 1px solid brown;
+    border-bottom: 1px solid brown;
 }
 
 p {
     text-align: start;
+    flex: 3;
+    padding: .25rem 3rem;
+    align-self: center;
+    line-height: 1.3rem;
+}
+
+div {
+    display: flex;
+    flex-flow: row wrap;
 }
 
 aside {
-
+    margin: 1rem 1rem;
+    padding: .5rem .5rem;
+    font-size: small;
+    height: fit-content;
+    box-shadow: .25rem .25rem 1rem blue, -.1em -.1em yellow;
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    background-color: rgba($color: #0000ff, $alpha: .1);
+    h1,h2,h3,h4,h5,h6 {
+        font-style: italic;
+    }
 }
 
 table {
-
+    padding: 1rem 1rem;
+    margin: 1rem auto;
+    box-sizing: border-box;
+    text-overflow: wrap;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    tr{
+        padding: .5rem .5rem;
+        th {
+            font-family: 'LEMONMILK';
+            padding: .25rem .5rem;
+            border-bottom: 1px solid black;
+            box-sizing: border-box;
+        }
+        td{
+            padding: .25rem .5rem;
+            text-align: center;
+            box-sizing: border-box;
+        }
+    }
 }
 
 header {
-
+    font-size: large;
+    font-style: bold;
+    background: rgba($color: #0000ff, $alpha: .1);;
+    padding: .5rem 1rem;
+    border-radius: 20px 0px 20px 0px;
+    border: none;
 }
 
 main {
-
+    background: rgba($color: #aaaaaa, $alpha: .1);
+    padding: .5rem 1rem;
 }
 
 footer {
-
+    padding: .5rem 1rem;
+    font-style: italic;
+    p{
+        text-align: center;
+    }
+}
+form {
+    text-align: center;
+    padding: 2rem 2rem;
+    margin: 1rem 1rem;
+    width: 100%;
+    background: rgba(255, 246, 127, 0.2);
+    fieldset {
+        padding: 1rem 1rem;
+    }
 }
 
-form {
-
+legend {
+    font-family: 'LEMONMILK', sans-serif;
 }
 
 label {
-
+    font-family: 'LEMONMILK', sans-serif;
+    font-weight: bold;
+}
+.freeLabel {
+    width: 100%;
+    text-align: center;
 }
 
 input {
+    width: 100%;
+    margin: .5rem 0rem;
+    padding: .5rem .5rem;
+    box-sizing: border-box;
+}
 
+input[type='number'], input[type='text'], input[type='time'], input[type='date'], select {
+    box-shadow: .1rem .1rem .1rem .1rem rgba(0, 0, 0, 0.5);
+}
+
+select{
+    width: 100%;
+    margin: .5rem 0rem;
+    padding: .5rem .5rem;
+    box-sizing: border-box;
+}
+
+button {
+    width: 90%;
+    margin: 1rem 0rem;
+    height: 3rem;
+    font-family: 'LEMONMILK', sans-serif;
+    font-weight: bold;
+}
+
+button:hover, input:hover, select:hover {
+    background: rgba(128, 128, 255, 0.1);
+}
+
+iframe {
+    margin: 1rem 23%;
+    padding: 1rem 2%;
+    width: 50%;
+}
+
+figure {
+    margin: 1rem auto;
+    padding: 1rem 1rem;
+    background-color: rgba(0, 0, 0, 0.1);
+    figcaption {
+        text-align: end;
+        cite {
+            font-family: 'LEMONMILK';
+            font-size: small;
+        }
+    }
+    blockquote {
+        font-family: 'LEMONMILK';
+        font-size: large;
+        font-style: bold;
+        text-align: center;
+    }
+}
+
+meter {
+    width: 100%;
+    height: 5rem;
+}
+
+details {
+    padding: .5rem 1rem;
+    summary {
+        text-align: center;
+        font-size: small;
+    }
+}
+ul {
+    margin:auto 1.5rem;
 }
