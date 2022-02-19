@@ -1,22 +1,19 @@
-@media all and (width > 200px) {
-    body {
-      margin: 0% 2%;
-      background: #0000ff;
-    }
-  }
+@use "sass:color";
 
 @font-face {
     font-family: 'LEMONMILK';
     src: url("fonts/LEMONMILK-Light.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'LEMONMILK';
-    src: url("fonts/LEMONMILK-Lightitalic.woff2") format("woff2");
+    src: url("fonts/LEMONMILK-LightItalic.woff2") format("woff2");
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -24,6 +21,7 @@
     src: url("fonts/LEMONMILK-Regular.woff2") format("woff2");
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -31,16 +29,30 @@
     src: url("fonts/LEMONMILK-RegularItalic.woff2") format("woff2");
     font-weight: bold;
     font-style: italic;
+    font-display: swap;
 }
 
+// Some general color declarations (Powered by paletton.com)
+$Primary: #657884;
+$Secondary: #CEC19B;
+$Tertiary: #CEA89B;
+$PrimaryFont: color.scale($Primary, $lightness: -30%);
+$SecondaryFont: color.scale($Secondary, $lightness: -30%);
+$TertiaryFont: color.scale($Tertiary, $lightness: -30%);
+$SecondaryBg: color.scale($Secondary, $lightness: 25%, $alpha: -50%);
+$TertiaryBg: color.scale($Tertiary, $lightness: 20%, $alpha: -30%);
 
-  
+//One little animation so hover isn't so jarring
+@keyframes hoverActive{
+    from {} to {background-color: #e0e0e0;}
+}
 
+// Big general Elements.  We'll use flex column on body, and use divs to create rows.
 body {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    margin: 0% 10%;
+    margin: 0% auto;
     padding: 0rem 4rem;
-    background: #efefef;
+    background-color: $Primary;
     color: #111;
     min-width: fit-content;
     min-width: -moz-fit-content;
@@ -49,16 +61,60 @@ body {
     flex-direction: column;
 }
 
+header {
+    font-size: large;
+    font-style: bold;
+    background-color: rgba($color: #ffffff, $alpha: .9);
+    border: 4px solid $Secondary;
+    padding: .5rem 1rem;
+    border-radius: 20px 20px 0px 0px;
+    border-bottom: none;
+}
+
+main {
+    background-color: rgba($color: #ffffff, $alpha: .9);
+    padding: .5rem 1rem;
+    border: 4px solid $Tertiary;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+footer {
+    padding: .5rem 1rem;
+    font-family: 'LEMONMILK';
+    font-weight: bold;
+    background-color: rgba($color: #ffffff, $alpha: .9);
+    border: 4px solid $Secondary;
+    padding: .5rem 1rem;
+    margin-bottom: 2rem;
+    border-radius: 0px 0px 20px 20px;
+    border-top: none;
+    p{
+        text-align: center;
+    }
+}
+
+div {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem 2rem;
+    padding: 1rem 1rem;
+}
+
+//More specific elements
 h1,h2,h3,h4,h5,h6 {
     font-family:"LEMONMILK", sans-serif;
     text-align: center;
-    color: brown;
+    color: $PrimaryFont;
     font-weight: bold;
     margin-bottom: .25rem;
-    border-top: 1px solid brown;
-    border-bottom: 1px solid brown;
+    border-top: 2px solid $Secondary;
+    border-bottom: 2px solid $Tertiary;
 }
-
 p {
     text-align: start;
     flex: 3;
@@ -67,25 +123,23 @@ p {
     line-height: 1.3rem;
 }
 
-div {
-    display: flex;
-    flex-flow: row wrap;
-}
-
 aside {
-    margin: 1rem 1rem;
+    margin: .5rem .5rem;
     padding: .5rem .5rem;
     font-size: small;
-    height: fit-content;
-    box-shadow: .25rem .25rem 1rem blue, -.1em -.1em yellow;
+    box-shadow: .25rem .25rem 1rem $Tertiary, -.1em -.1em $Primary;
     display: flex;
     flex: 1;
     flex-direction: column;
     justify-content: center;
     align-self: center;
-    background-color: rgba($color: #0000ff, $alpha: .1);
+    background-color: $SecondaryBg;
+    border-radius: 20px 20px 20px 20px;
     h1,h2,h3,h4,h5,h6 {
         font-style: italic;
+    }
+    p::first-letter {
+        font-size: medium;
     }
 }
 
@@ -94,7 +148,10 @@ table {
     margin: 1rem auto;
     box-sizing: border-box;
     text-overflow: wrap;
-    border: 1px solid rgba(0, 0, 0, 0.5);
+    border: 5px solid $Secondary;
+    border-radius: 20px 0px 20px 0px;
+    background: $SecondaryBg;
+    font-weight: bold;
     tr{
         padding: .5rem .5rem;
         th {
@@ -111,35 +168,37 @@ table {
     }
 }
 
-header {
-    font-size: large;
-    font-style: bold;
-    background: rgba($color: #0000ff, $alpha: .1);;
-    padding: .5rem 1rem;
-    border-radius: 20px 0px 20px 0px;
-    border: none;
+td[name='yes'] {
+    background: rgba($color: $Tertiary, $alpha: .8);
 }
 
-main {
-    background: rgba($color: #aaaaaa, $alpha: .1);
-    padding: .5rem 1rem;
+td[name='no'] {
+    background: rgba($color: $Primary, $alpha: .8);
 }
 
-footer {
-    padding: .5rem 1rem;
-    font-style: italic;
-    p{
-        text-align: center;
-    }
+td[name='na'] {
+    background: rgba(128, 128, 128, 0.8);
 }
+
+ul {
+    margin:auto 1.5rem;
+}
+
 form {
     text-align: center;
     padding: 2rem 2rem;
     margin: 1rem 1rem;
     width: 100%;
-    background: rgba(255, 246, 127, 0.2);
+    border: 5px solid $Secondary;
+    border-radius: 20px 0px 20px 0px;
+    background: $SecondaryBg;
     fieldset {
         padding: 1rem 1rem;
+        legend {
+            font-size: large;
+            font-weight: bold;
+            font-style: italic;
+        }
     }
 }
 
@@ -154,16 +213,19 @@ label {
 .freeLabel {
     width: 100%;
     text-align: center;
+    color: $PrimaryFont;
 }
 
 input {
+    height: auto;
     width: 100%;
     margin: .5rem 0rem;
     padding: .5rem .5rem;
     box-sizing: border-box;
+    font-size: large;
 }
 
-input[type='number'], input[type='text'], input[type='time'], input[type='date'], select {
+input[type='number'], input[type='text'], input[type='datetime-local'], select {
     box-shadow: .1rem .1rem .1rem .1rem rgba(0, 0, 0, 0.5);
 }
 
@@ -182,20 +244,14 @@ button {
     font-weight: bold;
 }
 
-button:hover, input:hover, select:hover {
-    background: rgba(128, 128, 255, 0.1);
-}
-
-iframe {
-    margin: 1rem 23%;
-    padding: 1rem 2%;
-    width: 50%;
+input:hover, select:hover, input:focus, select:focus {
+    animation:  1s ease-in 0s both hoverActive;
 }
 
 figure {
-    margin: 1rem auto;
-    padding: 1rem 1rem;
-    background-color: rgba(0, 0, 0, 0.1);
+    margin: 1rem 4rem;
+    padding: 1rem 2rem;
+    background-color: $SecondaryBg;
     figcaption {
         text-align: end;
         cite {
@@ -211,7 +267,7 @@ figure {
     }
 }
 
-meter {
+progress {
     width: 100%;
     height: 5rem;
 }
@@ -223,6 +279,14 @@ details {
         font-size: small;
     }
 }
-ul {
-    margin:auto 1.5rem;
+
+address {
+    text-align: center;
+}
+
+// I'm not entirely sure why, but media stuff only seems to activate at the end of a file.
+@media all and (min-width: 1200px) {
+    body {
+        margin: 0% 12%;
+    }
 }

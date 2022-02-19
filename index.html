@@ -8,6 +8,15 @@
 	<meta name="keywords" content="Website, Heckin, Web Development">
 	<meta name="author" content="Michael Gardner">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/site.webmanifest">
+	<link rel="preload" as="font" href="fonts/LEMONMILK-Light.woff2" crossorigin>
+	<link rel="preload" as="font" href="fonts/LEMONMILK-LightItalic.woff2" crossorigin>
+	<link rel="preload" as="font" href="fonts/LEMONMILK-Regular.woff2" crossorigin>
+	<link rel="preload" as="font" href="fonts/LEMONMILK-RegularItalic.woff2" crossorigin>
+	<link rel="canonical" href="https://philotfarnsworth.github.io/APrettyHeckinWebsite/" />
 	<link href="style.css" rel="stylesheet">
 	<title>A Pretty Heckin' Website</title>
 </head>
@@ -21,9 +30,14 @@
 	<main>
 		<h2>Why Another Heckin' Website?</h2>
 		<div>
+			<aside>
+				<h3>Websites are hard</h3>
+				<img width="100%" max-width="300px" max-height="400px" src="resources/Dunce.webp" alt="Web developer begins their day"/>
+				<p>Get ready to be schooled.</p>
+			</aside>
 			<p>
 				In deference to the great luminaries of the past, we should expect more from websites that purport
-				to be the best {expletive} website. A Pretty Heckin' website meekly submits that beyond making your
+				to be the best <i>expletive</i> website. A Pretty Heckin' website meekly submits that beyond making your
 				site small, maybe you could think about accessibility and if it's not too much a bother maybe don't just use
 				a more than like, 5 bullet points in a row.
 			</p>
@@ -33,9 +47,7 @@
 			<p>
 				I don't want to disagree with such strongly worded convictions of our sainted forefathers, but when
 				writing a humble static site using headers in a way that clues the reader in on what's about to be
-				discussed. Not only will using relevant headers help your readers follow the content of your page,
-				but it might stop you from I don't know, using 14 bullet points in a row on some tangentially related
-				topics. That of course, leads me to...
+				discussed.
 			</p>
 			<aside>
 				<h4>Fun Tip</h4>
@@ -45,6 +57,9 @@
 				</p>
 			</aside>
 		</div>
+		<p>Not only will using relevant headers help your readers follow the content of your page,
+			but it might stop you from I don't know, using 14 bullet points in a row on some tangentially related
+			topics. That of course, leads me to...</p>
 		<h3>There's More to Life than Lists</h3>
 		<div>
 			<p>
@@ -67,84 +82,94 @@
 			<tbody>
 				<tr>
 					<td>Google.com</td>
-					<td>~800 kB</td>
-					<td>N/A</td>
-					<td>N/A</td>
-					<td>YES</td>
+					<td>~1000 kB</td>
+					<td name="na">N/A</td>
+					<td name="na">N/A</td>
+					<td name="yes">YES</td>
 				</tr>
 				<tr>
 					<td>M***** F****** Website</td>
 					<td>~22 kB</td>
-					<td>NO</td>
-					<td>NO</td>
-					<td>NO</td>
+					<td name="no">NO</td>
+					<td name="no">NO</td>
+					<td name="no">NO</td>
 				</tr>
 				<tr>
-					<td>Better M***** F******* Website.com</td>
+					<td>Better M***** F******* Website</td>
 					<td>~22 kB</td>
-					<td>NO</td>
-					<td>NO</td>
-					<td>NO</td>
+					<td name="no">NO</td>
+					<td name="no">NO</td>
+					<td name="no">NO</td>
 				</tr>
 				<tr>
 					<td>The Best M***** F****** Website</td>
 					<td>~110 kB</td>
-					<td>YES</td>
-					<td>NO</td>
-					<td>NO</td>
+					<td name="yes">YES</td>
+					<td name="no">NO</td>
+					<td name="no">NO</td>
 				</tr>
 				<tr>
 					<td>A Pretty Heckin' Website</td>
 					<td>TBD</td>
-					<td>YES</td>
-					<td>YES</td>
-					<td>YES</td>
+					<td name="yes">YES</td>
+					<td name="yes">YES</td>
+					<td name="yes">YES</td>
 				</tr>
 			</tbody>
 		</table>
 		<h4>Lists</h4>
 		<div>
-		<p>
-			Okay, I kinda lied, because beyond comparisons you're gonna need lists, but you should 
-			make an effort at organizing it.  If you have over 5 points, consider refactoring, or at 
-			least organizing with sub lists.  
-		</p>
-		
+			<p>
+				Okay, I kinda lied, because beyond comparisons you're gonna need lists, but you should
+				make an effort at organizing it. If you have over 5 points, consider refactoring, or at
+				least organizing with sub lists.
+			</p>
 			<aside>
 				<h5>Numbered Lists</h5>
 				<p>What? Are you writing a table of contents?</p>
 			</aside>
 		</div>
-			<ul>
-				<li>My superior CSS</li>
+		<ul>
+			<li>Superior <abbr title="Cascading Style Sheets">CSS</abbr>
 				<ul>
-					<li>Lightweight</li>
-					<ul>
-						<li>under 250 lines</li>
-					</ul>
-					<li>Responsive</li>
-					<ul><li>Broadly compatible</li></ul>
+					<li>
+						Lightweight
+						<ul>
+							<li>under 250 lines</li>
+						</ul>
+					</li>
+					<li>Responsive
+						<ul>
+							<li>Broadly compatible</li>
+						</ul>
+					</li>
 					<li>Built with Sass</li>
 				</ul>
-				<li>My Honorable HTML</li>
+			</li>
+			<li>Honorable <abbr title="HyperText Markup Language">HTML</abbr>
 				<ul>
-					<li>Semantic</li>
-					<ul>
-						<li>Headings <strong>aren't</strong> used for emphasis</li>
-						<li>Built for default accessibility</li>
-					</ul>
-					<li>Comprehensive</li>
-					<ul>
-						<li>HTML features like forms and tables</li>
-					</ul>
+					<li>Semantic
+						<ul>
+							<li>Headings <strong>aren't</strong> used for emphasis</li>
+							<li>Built for default accessibility</li>
+						</ul>
+					</li>
+					<li>Comprehensive
+						<ul>
+							<li><abbr>HTML</abbr> features like forms and tables</li>
+						</ul>
+					</li>
 				</ul>
-				<li>My Judicious Javascript</li>
+			</li>
+			<li>Judicious Javascript
 				<ul>
 					<li>Important data loads without it</li>
 					<li>Provides interesting, optional features</li>
 				</ul>
-				<li>More general features</li>
-			</ul>
+			</li>
+			<li>More general features</li>
+		</ul>
+
 		<p>Even then, you can get wild and use some more exotic representations built right into the HTML spec</p>
 		<h4>Other Informational Widgets</h4>
 		<div>
@@ -156,7 +181,9 @@
 			</p>
 			<aside>
 				<h5>Internet Explorer</h5>
-				<p>One day MDN will not be filled with warnings about Internet Explorer.  Until then, try to build important stuff without these elements.</p>
+				<p>One day <abbr title="Mozilla Developer Network">MDN</abbr> will not be filled with warnings about Internet
+					Explorer. Until then, try to build important
+					stuff without these elements.</p>
 			</aside>
 		</div>
 		<h5>Details</h5>
@@ -165,14 +192,18 @@
 			<summary>Footnote: 1</summary>
 			<p>You can use details when you don't think it's necessary for the reader to get all the details.</p>
 		</details>
-		<h5>Meter</h5>
+		<h5>Progress</h5>
 		<div>
 			<label class="freeLabel" for="pageProgress">Page Progress:</label>
-			<meter id="pageProgress" min="0" max="100" value="0" optimum="0">
+			<progress id="pageProgress" min="0" max="100" value="0" optimum="0">
 				0
-			</meter>
-			<p>This bar measures your progress on the page</p>
+			</progress>
+			<p>This bar measures your progress on the page.</p>
 			<!-- TODO: UPDATE THIS WITH CURRENT SCROLL POSITION -->
+		</div>
+		<h5>Meter</h5>
+		<div>
+			<p>DO SOMETHING WITH METER</p>
 		</div>
 		</div>
 		<h3>Forms are Fundamental</h3>
@@ -197,7 +228,7 @@
 					<fieldset id="formBoxes">
 						<label for="formBoxYes">YES</label>
 						<input type="checkbox" id="formBoxYes" name="box" value="YES" checked>
-						<label for="FormBoxNo">NO</label>
+						<label for="formBoxNo">NO</label>
 						<input type="checkbox" id="formBoxNo" name="box" value="NO">
 					</fieldset>
 					<label for="formSelect">Select</label>
@@ -217,11 +248,12 @@
 			</p>
 		</div>
 		<h3>Images and other pretty things</h3>
+		<img max-width="320px" height="auto" src="resources/working.webp" alt="Web developer working diligently."></img>
 		<div>
 			<aside>
-				<h4>Napoleon Dynamite Sez</h4>
-				<img src="Heckin.jpg" alt="Napoleon Dynamite"></img>
-				<p>Maybe Best Friggin' Website is more on brand?</p>
+				<h4>Feeling Smarter?</h4>
+				
+				<p>But now I'm so busy!</p>
 			</aside>
 			<p>
 				Finally, you need to accommodate your users who go by pictures, this is not always an easy task.
@@ -230,21 +262,21 @@
 			</p>
 		</div>
 		<p>What's that you say?</p>
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/RzX-fx_GhrM"
-				title="YouTube video player - Harrison Ford Already Works Around the Clock" frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy"
-				allowfullscreen></iframe>
-			<p>
-				Even accounting for the tables and forms, we're still looking at less than 250 lines of CSS.  Don't believe me?
-				check out what this quote has to say about it:  
-			</p>
-				<figure>
-					<blockquote>
-						<p>I didn't kill my wife! Also something about web design!</p>
-					</blockquote>
-					<figcaption>- Dr. Richard Kimble, <cite>Seeking the One Armed Man</cite></figcaption>
-				</figure>
-				<p>That's right, we should keep all this in mind as we approach web design.</p>
+		<iframe width="560" height="315" src="https://www.youtube.com/embed/RzX-fx_GhrM"
+			title="YouTube video player - Harrison Ford Already Works Around the Clock" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" loading="lazy"
+			allowfullscreen></iframe>
+		<p>
+			Even accounting for the tables and forms, we're still looking at less than 250 lines of CSS. Don't believe me?
+			check out what this quote has to say about it:
+		</p>
+		<figure>
+			<blockquote>
+				<p>I didn't kill my wife! Also something about web design!</p>
+			</blockquote>
+			<figcaption>- Dr. Richard Kimble, <cite>Seeking the One Armed Man</cite></figcaption>
+		</figure>
+		<p>That's right, we should keep all this in mind as we approach web design.</p>
 		<h2>Pretty Heckin' Website is not a satire</h2>
 		<div>
 			<p>
@@ -265,7 +297,13 @@
 		</div>
 	</main>
 	<footer>
-		<p>Copyright 2022 Michael Gardner - <a href="http://www.linkedin.com/in/michael-gardner-az">Hire Me.</a> Please.</p>
+		<p>This site is for educational purposes only.  All images, videos and quotes are not the property of the site owner and used with a very tenuous grasp of Fair Use.</p>
+		<p>Copyright 2022 Michael Gardner - <a href="http://www.linkedin.com/in/michael-gardner-az">Check me out</a></p>
+		<p>Almost forgot the address tag:</p>
+		<address>
+			<a href="mailto:Idodevthings@gmail.com">Idodevthings@gmail.com</a>
+		</address>
 	</footer>
 </body>
+
 </html>

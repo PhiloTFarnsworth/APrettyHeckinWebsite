@@ -1,38 +1,41 @@
-@media all and (width > 200px) {
-  body {
-    margin: 0% 2%;
-    background: #0000ff;
-  }
-}
 @font-face {
   font-family: "LEMONMILK";
-  src: url("fonts/LEMONMILK-light.woff2") format("woff2");
+  src: url("fonts/LEMONMILK-Light.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LEMONMILK";
-  src: url("fonts/LEMONMILK-lightitalic.woff2") format("woff2");
+  src: url("fonts/LEMONMILK-LightItalic.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
+  font-display: swap;
 }
 @font-face {
   font-family: "LEMONMILK";
   src: url("fonts/LEMONMILK-Regular.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "LEMONMILK";
   src: url("fonts/LEMONMILK-RegularItalic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
+  font-display: swap;
+}
+@keyframes hoverActive {
+  to {
+    background-color: #e0e0e0;
+  }
 }
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  margin: 0% 10%;
+  margin: 0% auto;
   padding: 0rem 4rem;
-  background: #efefef;
+  background-color: #657884;
   color: #111;
   min-width: fit-content;
   min-width: -moz-fit-content;
@@ -41,14 +44,58 @@ body {
   flex-direction: column;
 }
 
+header {
+  font-size: large;
+  font-style: bold;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 4px solid #CEC19B;
+  padding: 0.5rem 1rem;
+  border-radius: 20px 20px 0px 0px;
+  border-bottom: none;
+}
+
+main {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border: 4px solid #CEA89B;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+footer {
+  padding: 0.5rem 1rem;
+  font-family: "LEMONMILK";
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 4px solid #CEC19B;
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0px 0px 20px 20px;
+  border-top: none;
+}
+footer p {
+  text-align: center;
+}
+
+div {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 2rem 2rem;
+  padding: 1rem 1rem;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "LEMONMILK", sans-serif;
   text-align: center;
-  color: brown;
+  color: #47545c;
   font-weight: bold;
   margin-bottom: 0.25rem;
-  border-top: 1px solid brown;
-  border-bottom: 1px solid brown;
+  border-top: 2px solid #CEC19B;
+  border-bottom: 2px solid #CEA89B;
 }
 
 p {
@@ -59,26 +106,24 @@ p {
   line-height: 1.3rem;
 }
 
-div {
-  display: flex;
-  flex-flow: row wrap;
-}
-
 aside {
-  margin: 1rem 1rem;
+  margin: 0.5rem 0.5rem;
   padding: 0.5rem 0.5rem;
   font-size: small;
-  height: fit-content;
-  box-shadow: 0.25rem 0.25rem 1rem blue, -0.1em -0.1em yellow;
+  box-shadow: 0.25rem 0.25rem 1rem #CEA89B, -0.1em -0.1em #657884;
   display: flex;
   flex: 1;
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  background-color: rgba(0, 0, 255, 0.1);
+  background-color: rgba(218, 209, 180, 0.5);
+  border-radius: 20px 20px 20px 20px;
 }
 aside h1, aside h2, aside h3, aside h4, aside h5, aside h6 {
   font-style: italic;
+}
+aside p::first-letter {
+  font-size: medium;
 }
 
 table {
@@ -86,7 +131,10 @@ table {
   margin: 1rem auto;
   box-sizing: border-box;
   text-overflow: wrap;
-  border: 1px solid rgba(0, 0, 0, 0.5);
+  border: 5px solid #CEC19B;
+  border-radius: 20px 0px 20px 0px;
+  background: rgba(218, 209, 180, 0.5);
+  font-weight: bold;
 }
 table tr {
   padding: 0.5rem 0.5rem;
@@ -103,26 +151,20 @@ table tr td {
   box-sizing: border-box;
 }
 
-header {
-  font-size: large;
-  font-style: bold;
-  background: rgba(0, 0, 255, 0.1);
-  padding: 0.5rem 1rem;
-  border-radius: 20px 0px 20px 0px;
-  border: none;
+td[name=yes] {
+  background: rgba(206, 168, 155, 0.8);
 }
 
-main {
-  background: rgba(170, 170, 170, 0.1);
-  padding: 0.5rem 1rem;
+td[name=no] {
+  background: rgba(101, 120, 132, 0.8);
 }
 
-footer {
-  padding: 0.5rem 1rem;
-  font-style: italic;
+td[name=na] {
+  background: rgba(128, 128, 128, 0.8);
 }
-footer p {
-  text-align: center;
+
+ul {
+  margin: auto 1.5rem;
 }
 
 form {
@@ -130,10 +172,17 @@ form {
   padding: 2rem 2rem;
   margin: 1rem 1rem;
   width: 100%;
-  background: rgba(255, 246, 127, 0.2);
+  border: 5px solid #CEC19B;
+  border-radius: 20px 0px 20px 0px;
+  background: rgba(218, 209, 180, 0.5);
 }
 form fieldset {
   padding: 1rem 1rem;
+}
+form fieldset legend {
+  font-size: large;
+  font-weight: bold;
+  font-style: italic;
 }
 
 legend {
@@ -148,16 +197,19 @@ label {
 .freeLabel {
   width: 100%;
   text-align: center;
+  color: #47545c;
 }
 
 input {
+  height: auto;
   width: 100%;
   margin: 0.5rem 0rem;
   padding: 0.5rem 0.5rem;
   box-sizing: border-box;
+  font-size: large;
 }
 
-input[type=number], input[type=text], input[type=time], input[type=date], select {
+input[type=number], input[type=text], input[type=datetime-local], select {
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
 }
 
@@ -176,20 +228,14 @@ button {
   font-weight: bold;
 }
 
-button:hover, input:hover, select:hover {
-  background: rgba(128, 128, 255, 0.1);
-}
-
-iframe {
-  margin: 1rem 23%;
-  padding: 1rem 2%;
-  width: 50%;
+input:hover, select:hover, input:focus, select:focus {
+  animation: 1s ease-in 0s both hoverActive;
 }
 
 figure {
-  margin: 1rem auto;
-  padding: 1rem 1rem;
-  background-color: rgba(0, 0, 0, 0.1);
+  margin: 1rem 4rem;
+  padding: 1rem 2rem;
+  background-color: rgba(218, 209, 180, 0.5);
 }
 figure figcaption {
   text-align: end;
@@ -205,7 +251,7 @@ figure blockquote {
   text-align: center;
 }
 
-meter {
+progress {
   width: 100%;
   height: 5rem;
 }
@@ -218,8 +264,14 @@ details summary {
   font-size: small;
 }
 
-ul {
-  margin: auto 1.5rem;
+address {
+  text-align: center;
+}
+
+@media all and (min-width: 1200px) {
+  body {
+    margin: 0% 12%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
