@@ -3,7 +3,6 @@
 
 <head>
 	<meta charset="UTF-8">
-	<!-- <meta http-equiv="Content-Security-Policy" content="default-src https:"> -->
 	<meta name="description" content="A Pretty Heckin' Website">
 	<meta name="keywords" content="Website, Heckin, Web Development">
 	<meta name="author" content="Michael Gardner">
@@ -17,12 +16,15 @@
 	<link rel="preload" as="font" href="fonts/LEMONMILK-Regular.woff2" crossorigin>
 	<link rel="preload" as="font" href="fonts/LEMONMILK-RegularItalic.woff2" crossorigin>
 	<link rel="canonical" href="https://philotfarnsworth.github.io/APrettyHeckinWebsite/" />
-	<link href="style.css" rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+
 	<title>A Pretty Heckin' Website</title>
 </head>
 
 <body>
+	<script src='main.js'></script>
 	<header>
+		<nav><a href="/">Home</a></nav>
 		<h1>A Pretty Heckin' Website</h1>
 		<p>For developers who don't spit and curse.
 		</p>
@@ -32,7 +34,8 @@
 		<div>
 			<aside>
 				<h3>Websites are hard</h3>
-				<img width="100%" max-width="300px" max-height="400px" src="resources/Dunce.webp" alt="Web developer begins their day"/>
+				<img width="100%" max-width="300px" max-height="400px" src="resources/dunce.webp"
+					alt="Web developer begins their day" />
 				<p>Get ready to be schooled.</p>
 			</aside>
 			<p>
@@ -187,72 +190,102 @@
 			</aside>
 		</div>
 		<h5>Details</h5>
-
 		<details>
 			<summary>Footnote: 1</summary>
 			<p>You can use details when you don't think it's necessary for the reader to get all the details.</p>
 		</details>
-		<h5>Progress</h5>
+		<h5>Meter</h5>
+		<p>Meters can be used to represent gauges. For example, Lighthouse, an browser accessibility tool, grades A Pretty
+			Heckin' Website:</p>
 		<div>
+			<div class="flexRows">
+				<label for="perfGrade">Performance</label>
+				<meter id="perfGrade" min="0" max="100" value="100" optimum="90"></meter>
+				<p><strong>100 Score</strong></p>
+			</div>
+			<div class="flexRows">
+				<label for="a11yGrade">Accessibility</label>
+				<meter id="a11yGrade" min="0" max="100" value="100" optimum="90"></meter>
+				<p><strong>100 Score</strong></p>
+			</div>
+			<div class="flexRows">
+				<label for="bestGrade">Best Practices</label>
+				<meter id="bestGrade" min="0" max="100" value="100" optimum="90"></meter>
+				<p><strong>100 Score</strong></p>
+			</div>
+			<div class="flexRows">
+				<label for="seoGrade">SEO</label>
+				<meter id="seoGrade" min="0" max="100" value="100" optimum="90"></meter>
+				<p><strong>100 Score</strong></p>
+			</div>
+			<div class="flexRows">
+				<label for="humorGrade">Humor</label>
+				<meter id="humorGrade" min="0" max="100" low="60" high="80" value="37" optimum="90"></meter>
+				<p><strong>37 Score</strong></p>
+			</div>
+		</div>
+		<div>
+			<h5>Progress</h5>
 			<label class="freeLabel" for="pageProgress">Page Progress:</label>
 			<progress id="pageProgress" min="0" max="100" value="0" optimum="0">
 				0
 			</progress>
 			<p>This bar measures your progress on the page.</p>
-			<!-- TODO: UPDATE THIS WITH CURRENT SCROLL POSITION -->
-		</div>
-		<h5>Meter</h5>
-		<div>
-			<p>DO SOMETHING WITH METER</p>
-		</div>
 		</div>
 		<h3>Forms are Fundamental</h3>
-		<div>
-			<p>
-				It's certainly weird that we're writing about websites that don't offer anything to do. Since you already have
-				a livejournal, we should probably model what you do when you want to have a website that actually does
-				something.
-			</p>
-			<form>
-				<fieldset>
-					<legend>Just a Form</legend>
-					<label for="formText">Text Input</label>
-					<input type="text" id="formText" name="text" placeholder="Type Something, Will ya?">
-					<label for="formNumber">Number Input</label>
-					<input type="number" id="formNumber" name="number" min="0" max="100">
-					<label for="formRange">Range Input</label>
-					<input type="range" id="formRange" name="range" min="0" max="100">
-					<label for="formDate">Date Time Input</label>
-					<input type="datetime-local" id="formDate" name="date">
-					<label for="formBoxes">Checkboxes</label>
-					<fieldset id="formBoxes">
-						<label for="formBoxYes">YES</label>
-						<input type="checkbox" id="formBoxYes" name="box" value="YES" checked>
-						<label for="formBoxNo">NO</label>
-						<input type="checkbox" id="formBoxNo" name="box" value="NO">
-					</fieldset>
-					<label for="formSelect">Select</label>
-					<select id="formSelect" name="select">
-						<option value=""></option>
-						<option value="1xer">1Xer</option>
-						<option value="10xer">10Xer</option>
-						<option value="overflow xer">Overflow Xer</option>
-					</select>
-					<button>Submit Form</button>
+		<p>
+			It's certainly weird that we're writing about websites that don't offer anything to do. Since you already have
+			a livejournal, we should probably model what you do when you want to have a website that actually does
+			something.
+		</p>
+		<form id="exampleForm" action="javascript:void(0);">
+			<fieldset>
+				<legend>Just a Form</legend>
+				<label for="formText">Text Input</label>
+				<input type="text" id="formText" name="text" placeholder="Type Something, Will ya?" required>
+				<label for="formNumber">Number Input</label>
+				<input type="number" id="formNumber" name="number" min="0" max="100" required>
+				<label for="formRange">Range Input</label>
+				<input type="range" id="formRange" name="range" min="0" max="100" required>
+				<label for="formDate">Date Time Input</label>
+				<input type="datetime-local" id="formDate" name="date" required>
+				<label for="formBoxes">Checkboxes</label>
+				<fieldset id="formBoxes">
+					<label for="formBoxYes">YES</label>
+					<input type="checkbox" id="formBoxYes" name="box" value="YES" checked>
+					<label for="formBoxNo">NO</label>
+					<input type="checkbox" id="formBoxNo" name="box" value="NO">
 				</fieldset>
-			</form>
-			<!-- TODO: FORM SHOULD CREATE AN ALERT WITH VALUES CHOSEN, RANGE AND NUMBER SHOULD AFFECT THE SAME VALUE AND MOVE A METER. -->
-			<p>
-				Now we're talking, there's even a button on the site now. Instead of venting to the world, you've now shown you
-				can take input and throw it right back in the user's face, where it belongs.
-			</p>
-		</div>
+				<label for="formSelect">Select</label>
+				<select id="formSelect" name="select" required>
+					<option value=""></option>
+					<optgroup label="Average Dev">
+						<option value="1xer">1Xer</option>
+					</optgroup>
+					<optgroup label="Great Dev">
+						<option value="10xer">10Xer</option>
+					</optgroup>
+					<optgroup label="Godlike Dev">
+						<option value="overflow xer">Overflow Xer</option>
+					</optgroup>
+				</select>
+				<button>Submit Form</button>
+			</fieldset>
+		</form>
+
+		<label for="formResults">Results</label>
+		<textarea id="formResults" name="results" placeholder="Form Not Submitted" disabled></textarea>
+		<button id="clearResults" aria> Clear Results </button>
+		<p>
+			Now we're talking, there's even a button on the site now. Instead of venting to the world, you've now shown you
+			can take input and throw it right back in the user's face, where it belongs.
+		</p>
 		<h3>Images and other pretty things</h3>
 		<img max-width="320px" height="auto" src="resources/working.webp" alt="Web developer working diligently."></img>
 		<div>
 			<aside>
 				<h4>Feeling Smarter?</h4>
-				
+
 				<p>But now I'm so busy!</p>
 			</aside>
 			<p>
@@ -297,7 +330,8 @@
 		</div>
 	</main>
 	<footer>
-		<p>This site is for educational purposes only.  All images, videos and quotes are not the property of the site owner and used with a very tenuous grasp of Fair Use.</p>
+		<p>This site is for educational purposes only. All images, videos and quotes are not the property of the site owner
+			and used with a very tenuous grasp of Fair Use.</p>
 		<p>Copyright 2022 Michael Gardner - <a href="http://www.linkedin.com/in/michael-gardner-az">Check me out</a></p>
 		<p>Almost forgot the address tag:</p>
 		<address>

@@ -52,6 +52,10 @@ header {
   padding: 0.5rem 1rem;
   border-radius: 20px 20px 0px 0px;
   border-bottom: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
 }
 
 main {
@@ -84,8 +88,37 @@ div {
   flex-flow: row wrap;
   justify-content: space-around;
   align-items: center;
-  margin: 2rem 2rem;
+  margin: 1rem 2rem;
   padding: 1rem 1rem;
+}
+
+.flexRows {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0;
+  padding: 0.5rem 1rem;
+}
+
+a {
+  color: #aa6953;
+}
+
+a:visited {
+  color: #aa9453;
+}
+
+nav a {
+  text-decoration: none;
+  color: #47545c;
+}
+nav a:visited {
+  color: #47545c;
+}
+nav a:hover {
+  color: #657884;
+  text-decoration: underline;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -175,6 +208,7 @@ form {
   border: 5px solid #CEC19B;
   border-radius: 20px 0px 20px 0px;
   background: rgba(218, 209, 180, 0.5);
+  box-sizing: border-box;
 }
 form fieldset {
   padding: 1rem 1rem;
@@ -228,6 +262,16 @@ button {
   font-weight: bold;
 }
 
+textarea {
+  margin: 1rem 1rem;
+  padding: 1rem 1rem;
+  background-color: rgba(216, 185, 175, 0.7);
+  width: 80%;
+  height: 4rem;
+  font-size: x-large;
+  font-weight: bold;
+}
+
 input:hover, select:hover, input:focus, select:focus {
   animation: 1s ease-in 0s both hoverActive;
 }
@@ -254,6 +298,11 @@ figure blockquote {
 progress {
   width: 100%;
   height: 5rem;
+}
+
+meter {
+  height: 5rem;
+  width: 15rem;
 }
 
 details {
