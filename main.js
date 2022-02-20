@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
     //Clear Results
     document.querySelector('#clearResults').onclick = () => {
-        document.querySelector('#formResults').innerHTML = "Form Not Submitted"
+        document.querySelector('#formResults').innerHTML = "Form Cleared"
     }
 });
 
@@ -25,4 +25,5 @@ document.addEventListener("scroll", () => {
     const yMax = Math.round(document.body.scrollHeight)
     const progress = Math.round((yPos / yMax) * 100)
     document.querySelector('#pageProgress').value = progress
+    document.querySelector('#progressSpan').innerHTML = progress
 })

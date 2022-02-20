@@ -1,7 +1,7 @@
 @use "sass:color";
 
 @font-face {
-    font-family: 'LEMONMILK';
+    font-family: "LEMONMILK";
     src: url("fonts/LEMONMILK-Light.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-    font-family: 'LEMONMILK';
+    font-family: "LEMONMILK";
     src: url("fonts/LEMONMILK-LightItalic.woff2") format("woff2");
     font-weight: normal;
     font-style: italic;
@@ -17,7 +17,7 @@
 }
 
 @font-face {
-    font-family: 'LEMONMILK';
+    font-family: "LEMONMILK";
     src: url("fonts/LEMONMILK-Regular.woff2") format("woff2");
     font-weight: bold;
     font-style: normal;
@@ -25,7 +25,7 @@
 }
 
 @font-face {
-    font-family: 'LEMONMILK';
+    font-family: "LEMONMILK";
     src: url("fonts/LEMONMILK-RegularItalic.woff2") format("woff2");
     font-weight: bold;
     font-style: italic;
@@ -34,29 +34,43 @@
 
 // Some general color declarations (Powered by paletton.com)
 $Primary: #657884;
-$Secondary: #CEC19B;
-$Tertiary: #CEA89B;
+$Secondary: #cec19b;
+$Tertiary: #cea89b;
 $PrimaryFont: color.scale($Primary, $lightness: -30%);
-$SecondaryFont: color.scale($Secondary, $lightness: -30%);
-$TertiaryFont: color.scale($Tertiary, $lightness: -30%);
+$SecondaryFont: color.scale($Secondary, $lightness: -55%);
+$TertiaryFont: color.scale($Tertiary, $lightness: -55%);
 $SecondaryBg: color.scale($Secondary, $lightness: 25%, $alpha: -50%);
 $TertiaryBg: color.scale($Tertiary, $lightness: 20%, $alpha: -30%);
 
-//One little animation so hover isn't so jarring
-@keyframes hoverActive{
-    from {} to {background-color: #e0e0e0;}
+@mixin hover-animated($color) {
+    $name: hover-#{unique-id()};
+    @keyframes #{$name} {
+        from {
+        }
+        to {
+            background-color: $color;
+        }
+    }
+    animation: 1s ease-in 0s both $name;
+}
+
+@mixin flexCol {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
 }
 
 // Big general Elements.  We'll use flex column on body, and use divs to create rows.
 body {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
     margin: 0% auto;
     padding: 0rem 4rem;
     background-color: $Primary;
     color: #111;
-    min-width: fit-content;
     min-width: -moz-fit-content;
     min-width: -webkit-fit-content;
+    min-width: fit-content;
     display: flex;
     flex-direction: column;
 }
@@ -64,38 +78,32 @@ body {
 header {
     font-size: large;
     font-style: bold;
-    background-color: rgba($color: #ffffff, $alpha: .9);
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
     border: 4px solid $Secondary;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 20px 20px 0px 0px;
     border-bottom: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    @include flexCol();
 }
 
 main {
-    background-color: rgba($color: #ffffff, $alpha: .9);
-    padding: .5rem 1rem;
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
+    padding: 0.5rem 1rem;
     border: 4px solid $Tertiary;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    @include flexCol();
 }
 
 footer {
-    padding: .5rem 1rem;
-    font-family: 'LEMONMILK';
+    padding: 0.5rem 1rem;
+    font-family: "LEMONMILK";
     font-weight: bold;
-    background-color: rgba($color: #ffffff, $alpha: .9);
+    background-color: rgba($color: #ffffff, $alpha: 0.9);
     border: 4px solid $Secondary;
-    padding: .5rem 1rem;
+    padding: 0.5rem 1rem;
     margin-bottom: 2rem;
     border-radius: 0px 0px 20px 20px;
     border-top: none;
-    p{
+    p {
         text-align: center;
     }
 }
@@ -103,36 +111,36 @@ footer {
 div {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-    margin: 1rem 2rem;
     padding: 1rem 1rem;
 }
 
 .flexRows {
-    display: flex;
-    flex-flow: column;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0;
-    padding: .5rem 1rem;
+    @include flexCol();
+    margin: auto;
+    padding: 0.5rem 1rem;
 }
 
 a {
     color: $TertiaryFont;
+    font-weight: bold;
 }
-a:visited {
+a:visited,
+a:hover {
     color: $SecondaryFont;
 }
 
 nav {
     a {
+        font-size: large;
+        font-style: "LEMONMILK";
         text-decoration: none;
         color: $PrimaryFont;
     }
     a:visited {
         color: $PrimaryFont;
-    } 
+    }
     a:hover {
         color: $Primary;
         text-decoration: underline;
@@ -140,37 +148,57 @@ nav {
 }
 
 //More specific elements
-h1,h2,h3,h4,h5,h6 {
-    font-family:"LEMONMILK", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "LEMONMILK";
     text-align: center;
     color: $PrimaryFont;
     font-weight: bold;
-    margin-bottom: .25rem;
+    margin-bottom: 0rem;
     border-top: 2px solid $Secondary;
     border-bottom: 2px solid $Tertiary;
+}
+
+sup {
+    font-family: "LEMONMILK";
 }
 p {
     text-align: start;
     flex: 3;
-    padding: .25rem 3rem;
+    padding: 0.25rem 3rem;
     align-self: center;
     line-height: 1.3rem;
 }
+p.disclaimer {
+    font-style: italic;
+    flex: 1;
+}
 
 aside {
-    margin: .5rem .5rem;
-    padding: .5rem .5rem;
-    font-size: small;
-    box-shadow: .25rem .25rem 1rem $Tertiary, -.1em -.1em $Primary;
-    display: flex;
+    @include flexCol();
     flex: 1;
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
+    margin: 0.5rem 0.5rem;
+    padding: 0.5rem 0.5rem;
+    font-size: small;
+    box-shadow: 0.25rem 0.25rem 1rem $Tertiary, -0.1em -0.1em $Primary;
     background-color: $SecondaryBg;
     border-radius: 20px 20px 20px 20px;
-    h1,h2,h3,h4,h5,h6 {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
         font-style: italic;
+        font-size: small;
+        margin-bottom: 0;
+    }
+    p {
+        padding: 0rem .5rem;
     }
     p::first-letter {
         font-size: medium;
@@ -182,53 +210,67 @@ table {
     margin: 1rem auto;
     box-sizing: border-box;
     text-overflow: wrap;
-    border: 5px solid $Secondary;
+    border: 5px solid $Primary;
     border-radius: 20px 0px 20px 0px;
     background: $SecondaryBg;
     font-weight: bold;
-    tr{
-        padding: .5rem .5rem;
+    tr {
+        padding: 0.5rem 0.5rem;
         th {
-            font-family: 'LEMONMILK';
-            padding: .25rem .5rem;
+            font-family: "LEMONMILK";
+            padding: 0.25rem 0.5rem;
             border-bottom: 1px solid black;
             box-sizing: border-box;
+            a {
+                text-decoration: none;
+            }
         }
-        td{
-            padding: .25rem .5rem;
+        td {
+            padding: 0.25rem 0.5rem;
             text-align: center;
             box-sizing: border-box;
         }
     }
 }
 
-td[name='yes'] {
-    background: rgba($color: $Tertiary, $alpha: .8);
+td[name="yes"] {
+    background: rgba($color: $Tertiary, $alpha: 0.8);
 }
 
-td[name='no'] {
-    background: rgba($color: $Primary, $alpha: .8);
+td[name="no"] {
+    background: rgba($color: $Primary, $alpha: 0.8);
 }
 
-td[name='na'] {
+td[name="na"] {
     background: rgba(128, 128, 128, 0.8);
 }
 
-ul {
-    margin:auto 1.5rem;
+ul,
+ol {
+    font-family: "LEMONMILK";
+    font-size: large;
+    flex: 1;
+    ul,
+    ol {
+        font-size: 90%;
+    }
+    li {
+        padding: 0.5rem 0rem;
+        line-height: 1.5;
+    }
 }
 
 form {
-    text-align: center;
     padding: 2rem 2rem;
     margin: 1rem 1rem;
-    width: 100%;
-    border: 5px solid $Secondary;
+    border: 5px solid $Primary;
     border-radius: 20px 0px 20px 0px;
     background: $SecondaryBg;
     box-sizing: border-box;
     fieldset {
+        @include flexCol();
         padding: 1rem 1rem;
+        align-items: stretch;
         legend {
             font-size: large;
             font-weight: bold;
@@ -238,45 +280,49 @@ form {
 }
 
 legend {
-    font-family: 'LEMONMILK', sans-serif;
+    font-family: "LEMONMILK", sans-serif;
 }
 
 label {
-    font-family: 'LEMONMILK', sans-serif;
+    font-family: "LEMONMILK", sans-serif;
     font-weight: bold;
+    text-align: center;
 }
 .freeLabel {
     width: 100%;
-    text-align: center;
+    
     color: $PrimaryFont;
 }
 
 input {
-    height: auto;
-    width: 100%;
-    margin: .5rem 0rem;
-    padding: .5rem .5rem;
-    box-sizing: border-box;
+    margin: 0.5rem 0rem;
+    padding: 0.5rem 0.5rem;
     font-size: large;
 }
 
-input[type='number'], input[type='text'], input[type='datetime-local'], select {
-    box-shadow: .1rem .1rem .1rem .1rem rgba(0, 0, 0, 0.5);
+input[type="number"],
+input[type="text"],
+input[type="datetime-local"],
+select {
+    box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
 }
 
-select{
-    width: 100%;
-    margin: .5rem 0rem;
-    padding: .5rem .5rem;
+select {
+    margin: 0.5rem 0rem;
+    padding: 0.5rem 0.5rem;
     box-sizing: border-box;
 }
 
 button {
-    width: 90%;
-    margin: 1rem 0rem;
+    margin: 1rem auto;
     height: 3rem;
-    font-family: 'LEMONMILK', sans-serif;
+    background-color: $TertiaryBg;
+    font-family: "LEMONMILK", sans-serif;
     font-weight: bold;
+}
+
+button:hover {
+    @include hover-animated($SecondaryBg);
 }
 
 textarea {
@@ -289,8 +335,11 @@ textarea {
     font-weight: bold;
 }
 
-input:hover, select:hover, input:focus, select:focus {
-    animation:  1s ease-in 0s both hoverActive;
+input:hover,
+select:hover,
+input:focus,
+select:focus {
+    @include hover-animated(#eeeeee);
 }
 
 figure {
@@ -300,12 +349,12 @@ figure {
     figcaption {
         text-align: end;
         cite {
-            font-family: 'LEMONMILK';
+            font-family: "LEMONMILK";
             font-size: small;
         }
     }
     blockquote {
-        font-family: 'LEMONMILK';
+        font-family: "LEMONMILK";
         font-size: large;
         font-style: bold;
         text-align: center;
@@ -317,17 +366,24 @@ progress {
     height: 5rem;
 }
 
-
-
 meter {
     height: 5rem;
     width: 15rem;
 }
 details {
-    padding: .5rem 1rem;
+    width: 100%;
+    padding: 0.25rem 0.5rem;
+    color: $PrimaryFont;
     summary {
+        font-family: "LEMONMILK";
+        font-weight: bold;
         text-align: center;
-        font-size: small;
+        border-bottom: 1px solid $Primary;
+    }
+    p {
+        text-align: center;
+        margin: 0;
+        padding: 0.5rem 3rem;
     }
 }
 
@@ -336,8 +392,24 @@ address {
 }
 
 // I'm not entirely sure why, but media stuff only seems to activate at the end of a file.
-@media all and (min-width: 1200px) {
+@media all and (max-width: 750px) {
+    iframe {
+        width: 275px;
+        height: 155px;
+    }
+    progress {
+        width: 15rem;
+    }
+    table {
+        font-size: smaller;
+        a {
+            font-size: medium;
+        }
+    }
+}
+
+@media all and (min-width: 1000px) {
     body {
-        margin: 0% 12%;
+        margin: 0% 10%;
     }
 }

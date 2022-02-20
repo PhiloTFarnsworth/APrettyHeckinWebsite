@@ -26,20 +26,15 @@
   font-style: italic;
   font-display: swap;
 }
-@keyframes hoverActive {
-  to {
-    background-color: #e0e0e0;
-  }
-}
 body {
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   margin: 0% auto;
   padding: 0rem 4rem;
   background-color: #657884;
   color: #111;
-  min-width: fit-content;
   min-width: -moz-fit-content;
   min-width: -webkit-fit-content;
+  min-width: fit-content;
   display: flex;
   flex-direction: column;
 }
@@ -48,7 +43,7 @@ header {
   font-size: large;
   font-style: bold;
   background-color: rgba(255, 255, 255, 0.9);
-  border: 4px solid #CEC19B;
+  border: 4px solid #cec19b;
   padding: 0.5rem 1rem;
   border-radius: 20px 20px 0px 0px;
   border-bottom: none;
@@ -61,7 +56,7 @@ header {
 main {
   background-color: rgba(255, 255, 255, 0.9);
   padding: 0.5rem 1rem;
-  border: 4px solid #CEA89B;
+  border: 4px solid #cea89b;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -73,7 +68,7 @@ footer {
   font-family: "LEMONMILK";
   font-weight: bold;
   background-color: rgba(255, 255, 255, 0.9);
-  border: 4px solid #CEC19B;
+  border: 4px solid #cec19b;
   padding: 0.5rem 1rem;
   margin-bottom: 2rem;
   border-radius: 0px 0px 20px 20px;
@@ -86,30 +81,33 @@ footer p {
 div {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  margin: 1rem 2rem;
   padding: 1rem 1rem;
 }
 
 .flexRows {
   display: flex;
-  flex-flow: column;
-  justify-content: space-around;
+  flex-direction: column;
   align-items: center;
-  margin: 0;
+  justify-content: space-around;
+  margin: auto;
   padding: 0.5rem 1rem;
 }
 
 a {
-  color: #aa6953;
+  color: #6d4435;
+  font-weight: bold;
 }
 
-a:visited {
-  color: #aa9453;
+a:visited,
+a:hover {
+  color: #6d5f35;
 }
 
 nav a {
+  font-size: large;
+  font-style: "LEMONMILK";
   text-decoration: none;
   color: #47545c;
 }
@@ -121,14 +119,23 @@ nav a:hover {
   text-decoration: underline;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "LEMONMILK", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "LEMONMILK";
   text-align: center;
   color: #47545c;
   font-weight: bold;
-  margin-bottom: 0.25rem;
-  border-top: 2px solid #CEC19B;
-  border-bottom: 2px solid #CEA89B;
+  margin-bottom: 0rem;
+  border-top: 2px solid #cec19b;
+  border-bottom: 2px solid #cea89b;
+}
+
+sup {
+  font-family: "LEMONMILK";
 }
 
 p {
@@ -139,21 +146,36 @@ p {
   line-height: 1.3rem;
 }
 
+p.disclaimer {
+  font-style: italic;
+  flex: 1;
+}
+
 aside {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
   margin: 0.5rem 0.5rem;
   padding: 0.5rem 0.5rem;
   font-size: small;
-  box-shadow: 0.25rem 0.25rem 1rem #CEA89B, -0.1em -0.1em #657884;
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
+  box-shadow: 0.25rem 0.25rem 1rem #cea89b, -0.1em -0.1em #657884;
   background-color: rgba(218, 209, 180, 0.5);
   border-radius: 20px 20px 20px 20px;
 }
-aside h1, aside h2, aside h3, aside h4, aside h5, aside h6 {
+aside h1,
+aside h2,
+aside h3,
+aside h4,
+aside h5,
+aside h6 {
   font-style: italic;
+  font-size: small;
+  margin-bottom: 0;
+}
+aside p {
+  padding: 0rem 0.5rem;
 }
 aside p::first-letter {
   font-size: medium;
@@ -164,7 +186,7 @@ table {
   margin: 1rem auto;
   box-sizing: border-box;
   text-overflow: wrap;
-  border: 5px solid #CEC19B;
+  border: 5px solid #657884;
   border-radius: 20px 0px 20px 0px;
   background: rgba(218, 209, 180, 0.5);
   font-weight: bold;
@@ -177,6 +199,9 @@ table tr th {
   padding: 0.25rem 0.5rem;
   border-bottom: 1px solid black;
   box-sizing: border-box;
+}
+table tr th a {
+  text-decoration: none;
 }
 table tr td {
   padding: 0.25rem 0.5rem;
@@ -196,22 +221,39 @@ td[name=na] {
   background: rgba(128, 128, 128, 0.8);
 }
 
-ul {
-  margin: auto 1.5rem;
+ul,
+ol {
+  font-family: "LEMONMILK";
+  font-size: large;
+  flex: 1;
+}
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  font-size: 90%;
+}
+ul li,
+ol li {
+  padding: 0.5rem 0rem;
+  line-height: 1.5;
 }
 
 form {
-  text-align: center;
   padding: 2rem 2rem;
   margin: 1rem 1rem;
-  width: 100%;
-  border: 5px solid #CEC19B;
+  border: 5px solid #657884;
   border-radius: 20px 0px 20px 0px;
   background: rgba(218, 209, 180, 0.5);
   box-sizing: border-box;
 }
 form fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
   padding: 1rem 1rem;
+  align-items: stretch;
 }
 form fieldset legend {
   font-size: large;
@@ -226,40 +268,48 @@ legend {
 label {
   font-family: "LEMONMILK", sans-serif;
   font-weight: bold;
+  text-align: center;
 }
 
 .freeLabel {
   width: 100%;
-  text-align: center;
   color: #47545c;
 }
 
 input {
-  height: auto;
-  width: 100%;
   margin: 0.5rem 0rem;
   padding: 0.5rem 0.5rem;
-  box-sizing: border-box;
   font-size: large;
 }
 
-input[type=number], input[type=text], input[type=datetime-local], select {
+input[type=number],
+input[type=text],
+input[type=datetime-local],
+select {
   box-shadow: 0.1rem 0.1rem 0.1rem 0.1rem rgba(0, 0, 0, 0.5);
 }
 
 select {
-  width: 100%;
   margin: 0.5rem 0rem;
   padding: 0.5rem 0.5rem;
   box-sizing: border-box;
 }
 
 button {
-  width: 90%;
-  margin: 1rem 0rem;
+  margin: 1rem auto;
   height: 3rem;
+  background-color: rgba(216, 185, 175, 0.7);
   font-family: "LEMONMILK", sans-serif;
   font-weight: bold;
+}
+
+button:hover {
+  animation: 1s ease-in 0s both hover-u67yfch;
+}
+@keyframes hover-u67yfch {
+  to {
+    background-color: rgba(218, 209, 180, 0.5);
+  }
 }
 
 textarea {
@@ -272,8 +322,16 @@ textarea {
   font-weight: bold;
 }
 
-input:hover, select:hover, input:focus, select:focus {
-  animation: 1s ease-in 0s both hoverActive;
+input:hover,
+select:hover,
+input:focus,
+select:focus {
+  animation: 1s ease-in 0s both hover-u67yfcs;
+}
+@keyframes hover-u67yfcs {
+  to {
+    background-color: #eeeeee;
+  }
 }
 
 figure {
@@ -306,20 +364,46 @@ meter {
 }
 
 details {
-  padding: 0.5rem 1rem;
+  width: 100%;
+  padding: 0.25rem 0.5rem;
+  color: #47545c;
 }
 details summary {
+  font-family: "LEMONMILK";
+  font-weight: bold;
   text-align: center;
-  font-size: small;
+  border-bottom: 1px solid #657884;
+}
+details p {
+  text-align: center;
+  margin: 0;
+  padding: 0.5rem 3rem;
 }
 
 address {
   text-align: center;
 }
 
-@media all and (min-width: 1200px) {
+@media all and (max-width: 750px) {
+  iframe {
+    width: 275px;
+    height: 155px;
+  }
+
+  progress {
+    width: 15rem;
+  }
+
+  table {
+    font-size: smaller;
+  }
+  table a {
+    font-size: medium;
+  }
+}
+@media all and (min-width: 1000px) {
   body {
-    margin: 0% 12%;
+    margin: 0% 10%;
   }
 }
 
