@@ -1,6 +1,13 @@
 # A Pretty Heckin' Website 
-## A Post-Ironic Statement on Web Design
+## An Exploration of Best Practices in Web Design  
 
-A Pretty heckin' website is designed to be a lightweight single page static website that offers some thoughts on design and is maybe kinda funny.  The real goal is to come up with a small set of css declarations that cover many real world design issues when styling basic html structures, while having some filler content that is not lorem ipsum.  It is also an opportunity to focus a bit more on topics like accessibility and model the necessary attributes for a modern user friendly website. 
+A Pretty Heckin' Website is a minimalist website concerned with modeling HTML elements to create a 'blog' type theme.  The document itself discusses several HTML concepts, while the styling is meant to convey general visual concepts the user should keep in mind as they build a webpage.  Beyond serving as a slightly snarky best practices sheet, A Pretty Heckin' Website also can be used as a template to apply other CSS designs owning to the very minimalist styling used.  
 
-This is inspired by several sites with very coarse language, so prepare yourself should you follow this link [The Best M***** F****** Website](https://thebestmotherfucking.website/).   
+### Check It Out!
+[A Pretty Heckin' Website](https://philotfarnsworth.github.io/APrettyHeckinWebsite/)
+
+### Inspiration
+This is inspired by several sites with very coarse language, [M***** F****** Website](http://motherfuckingwebsite.com), [Better M***** F****** Website](http://bettermotherfuckingwebsite.com) and [The Best M***** F****** Website](https://thebestmotherfucking.website/).  While the language and section headings leave much to be desired, these provided a good basis for the thought experiment I built with A Pretty Heckin' Website.
+
+### Criticism
+Did I fudge up?  Create an issue and make me learn my lesson.  No seriously, this is a learning exercise.
