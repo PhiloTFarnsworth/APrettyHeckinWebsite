@@ -304,9 +304,9 @@ button {
 }
 
 button:hover {
-  animation: 1s ease-in 0s both hover-u67yfch;
+  animation: 1s ease-in 0s both hover-uqhhf6n;
 }
-@keyframes hover-u67yfch {
+@keyframes hover-uqhhf6n {
   to {
     background-color: rgba(218, 209, 180, 0.5);
   }
@@ -326,9 +326,9 @@ input:hover,
 select:hover,
 input:focus,
 select:focus {
-  animation: 1s ease-in 0s both hover-u67yfcs;
+  animation: 1s ease-in 0s both hover-uqhhf72;
 }
-@keyframes hover-u67yfcs {
+@keyframes hover-uqhhf72 {
   to {
     background-color: #eeeeee;
   }
@@ -351,6 +351,10 @@ figure blockquote {
   font-size: large;
   font-style: bold;
   text-align: center;
+}
+
+picture {
+  margin-top: 0.25rem;
 }
 
 progress {
